@@ -7,32 +7,29 @@ module.exports = {
   /**
    * Compile Sass/scss files to CSS using Sass
    */
-  scss: function () {
-    // Require dependencies
+   scss: function () {
     let path = require("path");
     let sass = require("sass");
-
     let config = {
-      // Set the output file extension
       outputFileExtension: "css",
-
-      // Compile should return a string
-      compile: async function(inputContent, inputPath) {
+      compile: function (contents, inputPath) {
         let parsed = path.parse(inputPath);
         if(parsed.name.startsWith("_")) {
           return;
         }
-
-        let result = sass.compileString(inputContent);
-
-        // This is the render function, `data` is the full data cascade
-        return async (data) => {
-          return result.css;
+        let includesPaths = [this.config.dir.includes];
+        return (data) => {
+          let result = sass.renderSync({
+            file: inputPath,
+            includesPaths,
+            data: contents,
+            outputStyle: "compressed",
+          });
+          return result.css.toString("utf8");
         };
       }
     }
 
-    // Return the config to .eleventy.js
     return config;
   },
 

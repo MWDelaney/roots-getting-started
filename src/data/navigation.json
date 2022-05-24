@@ -6,8 +6,18 @@
       "external": false
     },
     {
-      "text": "Contact",
-      "url": "/contact/",
+      "text": "macOS",
+      "url": "/macos/",
+      "external": false
+    },
+    {
+      "text": "Ubuntu Linux",
+      "url": "/ubuntu-linux/",
+      "external": false
+    },
+    {
+      "text": "Windows (WSL)",
+      "url": "/windows/",
       "external": false
     }
   ]
