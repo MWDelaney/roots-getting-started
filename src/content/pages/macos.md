@@ -114,14 +114,7 @@ Trellis relies on a few additional software packages to function. Install these 
 - a Vagrant [provider](https://www.vagrantup.com/docs/providers):
   - Intel based Macs: [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
   - Apple Silicon (M1) based Macs: [Parallels Pro](../trellis/master/vagrant.md) >= v17
-- Ansible >= 2.5.3
-
-### VirtualBox (Intel Macs)
-
-Download and install the "OS X Hosts" version of VirtualBox from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
-
-### Parallels (Apple Silicon (M1) Macs)
-See our [Vagrant docs](../trellis/master/vagrant.md) for details.
+- Trellis CLI
 
 ### Vagrant
 
@@ -138,21 +131,21 @@ If you really want to use Homebrew to manage Vagrant, then run the following:
 $ brew install vagrant
 ```
 
-### Ansible
+### Vagrant Providers
 
-Install pip (Python package manager) if you don't already have it:
+#### VirtualBox (Intel Macs)
+
+Download and install the "OS X Hosts" version of VirtualBox from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+
+#### Parallels (Apple Silicon (M1) Macs)
+See our [Vagrant docs](../trellis/master/vagrant.md) for details.
+
+### Trellis CLI
+
+Install Trellis CLI from Homebrew.
 
 ```bash
-$ sudo easy_install pip
-```
-
-Install Ansible with pip:
-
-```bash
-$ pip install ansible
-
-# Install a specific Ansible version:
-$ pip install ansible==2.4.0.0
+brew install roots/tap/trellis-cli
 ```
 
 ### NFS
